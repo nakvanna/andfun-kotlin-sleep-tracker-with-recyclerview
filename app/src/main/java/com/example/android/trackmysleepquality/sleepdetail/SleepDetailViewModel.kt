@@ -30,17 +30,14 @@ import kotlinx.coroutines.Job
  * @param sleepNightKey The key of the current night we are working on.
  */
 class SleepDetailViewModel(
-        private val sleepNightKey: Long = 0L,
-        dataSource: SleepDatabaseDao) : ViewModel() {
+    private val sleepNightKey: Long = 0L,
+    dataSource: SleepDatabaseDao
+) : ViewModel() {
 
     /**
      * Hold a reference to SleepDatabase via its SleepDatabaseDao.
      */
     val database = dataSource
-
-
-    /**
-     */
 
     private val night = MediatorLiveData<SleepNight>()
 
@@ -63,10 +60,6 @@ class SleepDetailViewModel(
      */
     val navigateToSleepTracker: LiveData<Boolean?>
         get() = _navigateToSleepTracker
-
-    /**
-     *
-     */
 
 
     /**
